@@ -36,7 +36,6 @@
       </div>
     </div>
     <!-- /page one -->
-
     <!-- Start of page one.five: #context -->
     <div data-role="page" id="context">
       <div id="context_page" class="wrapper">
@@ -102,50 +101,92 @@
       </div>
     </div>
     <!-- /page two -->
-
     <!-- Start of third page: #inventory -->
     <div data-role="page" id="inventory">
       <div id="third_page" class="wrapper">
         <img src="img/level_ladder_background.jpg" id="inventory_background"/>
-          <div class="banner">
-            <div class="health">
-              <img src="img/health.png" alt=""/>
-            </div>
+        <div class="banner">
+          <div class="health">
+            <img src="img/health.png" alt=""/>
+          </div>
           <div class="money">
             <img src="img/gold.png"/>
           </div>
         </div>
-        <img src="img/equips.png" id="equipment"/>
+        <div class="slots">
+          <img src="img/equips.png" id="equipment"/>
+          <div class="slot" id="slot1"></div>
+          <div class="slot" id="slot2"></div>
+          <div class="slot" id="slot3"></div>
+          <div class="slot" id="slot4"></div>
+          <div class="slot" id="slot5"></div>
+          <div class="slot" id="slot6"></div>
+        </div>
         <div class="swiper-container">
           <div class="swiper-wrapper"></div>
         </div>
+        <div class="current-spend">
+          Current Spend: 0
+        </div>
         <a href="#" id="equip"><img src="img/equip.png" alt=""/></a>
-        <div class="slot" id="slot1"></div>
-        <div class="slot" id="slot2"></div>
-        <div class="slot" id="slot3"></div>
-        <div class="slot" id="slot4"></div>
-        <div class="slot" id="slot5"></div>
-        <div class="slot" id="slot6"></div>
         <a href="#" id="buy_coins"><img src="img/buy_coins.png" alt=""/></a>
         <a href="#level_ladder" data-role="button" data-inline="true" data-theme="a" data-transition="flip" class="left-btn">Back</a>
         <div class="center-button">
           <div>Swipe the <br>items <br>to browse</div>
         </div>
-        <a href="fight.html" data-role="button" data-inline="true" data-theme="b" data-transition="flip" data-ajax="false" class="right-btn" onclick="alert(get_string('characters'))">Fight</a>
+        <a href="#fight" data-role="button" data-inline="true" data-theme="b" data-transition="flip" class="right-btn">Fight</a>
       </div>
     </div>
     <!-- /page three -->
+    <!-- Start of fourth page: #fight -->
+    <div data-role="page" id="fight">
+      <div id="fourth_page" class="wrapper">
+        <!-- <img src="img/main_screen.jpg" id="fight_background" style="height:100%; width:26em" /> -->
+        <div class="hud">
+          <div id="hud-left">
+            Player <br>
+            <div id="myhealth">
+              <img src="img/health.png"/><span id="health_value"></span>
+            </div>
+            <div id="attack">
+              <img src="img/attack.png"/><span id="attack_value"></span>
+            </div>
+          </div>
+          <div id="hud-right">
+            Jester <br>
+            <div id="damage">
+              <span id="damage_value"></span><img src="img/damage.png"/>
+            </div>
+            <div id="enemy_fighting">
+              <span id="enemy_health"></span><img src="img/enemy.png"/>
+            </div>
+          </div>
+        </div>
+        <div id="board"></div>
+        <div id="rack"></div>
+        <div id="fight_buttons">
+          <a href="#" data-role="button" data-inline="true" data-theme="b" id="play">Play</a>
+          <a href="#" data-role="button" data-inline="true" data-theme="a" id="pass">Pass</a>
+          <a href="#" data-role="button" data-inline="true" data-theme="a" id="reset">Reset</a>
+          <a href="#" data-role="button" data-inline="true" data-theme="a" id="menu">Menu</a>
+        </div>
+      </div>
+    </div>
+    <!-- /page four -->
 
     <!-- <script type="text/javascript" src="phonegap.js"></script> -->
     <script type="text/javascript" src="js/vendor/jquery-1.9.1.min.js"></script>
     <script type="text/javascript" src="js/vendor/jquery.mobile-1.3.1.min.js"></script>
     <script type="text/javascript" src="js/vendor/preloadImages.jquery.js"></script>
     <script type="text/javascript" src="js/vendor/idangerous.swiper-1.5.5.min.js"></script>
+    <script type="text/javascript" src="js/vendor/long_dict.js"></script>
+    <script type="text/javascript" src="js/helpers.js"></script>
+    <script type="text/javascript" src="js/data.store.js"></script>
+    <script type="text/javascript" src="js/initialization.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
-    <script type="text/javascript" src="js/data.js"></script>
-    <script type="text/javascript" src="js/plugins.js"></script>
+    <script type="text/javascript" src="js/fight.js"></script>
     <script type="text/javascript">
-      app.initialize();
+      // app.initialize();
     </script>
   </body>
 </html>

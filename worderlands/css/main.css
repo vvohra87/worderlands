@@ -350,31 +350,43 @@ img.character {
 /*------------------------------------------*/
 /* Third Page
 ----------------------------------------------*/
+.swiper-container{
+    margin-top:2em;
+}
 
 #equipment {
     position: absolute;
     top: 5em;
     left: 2em;
     z-index: 2;
-    width: 80%;
+    /*width: 80%;*/
 }
 
-.swiper-slide img {
+.current-spend {
+    position: absolute;
+    margin-top: 2em;
+    top:22em;
+    left:2em;
+    z-index: 2;
+    font-weight: bold;
+}
+
+.swiper-slide img, .slot img {
     width: 5em;
     margin-right: 0.3em;
 }
 
-.swiper-slide table {
+.swiper-slide table, .slot table {
     width: 100%;
     font-size: 0.9em;
     line-height: 1.1em;
 }
 
-.swiper-slide td {
+.swiper-slide td, .slot td {
     vertical-align: middle;
 }
 
-.swiper-slide p {
+.swiper-slide p, .slot p {
     margin-top: 0.4em;
     font-size: 0.75em;
 }
@@ -441,7 +453,7 @@ img.character {
     top: 5em;
     left: 1.3em;
     z-index: 2;
-    width: 18em;
+    width: 24em;
 }
 
 .square {
@@ -459,6 +471,7 @@ img.character {
     line-height:2.45em;
     font-weight: bold;
     color:black;
+    border: 1px solid black;
 }
 
 .tile {
@@ -493,14 +506,14 @@ img.character {
 
 #rack {
     position: absolute;
-    top: 23em;
+    top: 30em;
     left: 1.3em;
     z-index: 2;
 }
 
 #fight_buttons {
     position: absolute;
-    top: 26em;
+    top: 34em;
     left: 1.3em;
     z-index: 2;
 }
