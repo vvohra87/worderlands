@@ -6,173 +6,196 @@
     <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
     <link rel="stylesheet" href="css/jquery.mobile-1.3.1.min.css">
     <link rel="stylesheet" href="css/idangerous.swiper.css">
-    <link rel="stylesheet" href="css/worderlands.min.css">
     <link rel="stylesheet" href="css/main.css">
     <title>Worderlands</title>
   </head>
   <body>
-    <!-- Start of first page: #home -->
+    <!-- Start of #home -->
     <div data-role="page" id="home">
-      <div id="first_page" class="wrapper">
-        <img src="img/title_splash_color.jpg" id="home_background" class="faded"/>
-        <div id="splashes">
-          <div id="ptotem_logo" class="logo"><img src="img/ptotem.png"/>
-            <h2>Ptotem <br>Games
-                <small><br>and</small>
-            </h2>
-          </div>
-          <div id="genii_logo" class="logo"><img src="img/genii.png"/>
-            <h2>Genii <br>Technologies
-                <small><br>present</small>
-            </h2>
-          </div>
-        </div>
-        <div class="main">
-          <img src="img/catchphrase.png" style="right:0;top:0;"/>
-          <img src="img/game_name.png" style="left:0;top:0.7em;"/>
-        </div>
-        <a href="#context" data-role="button" data-inline="true" data-theme="b" data-transition="flip"
-             class="right-btn" style="right:-5em;bottom:18em;display: none;">Start</a>
+      <div data-role="header">
+        <h1>The Worderlands - Arcade Mode</h1>
+      </div>
+      <div data-role="content">
+        <ul data-role="listview" data-inset="true" class="ui-listview ui-corner-all ui-shadow">
+          <li class="ui-li ui-li-static ui-btn-up-c ui-first-child">
+            <a href="" id="new_game_button">
+              <h3 class="ui-li-heading">New Game</h3>
+              <p class="ui-li-desc">Start a new game, try to beat as many enemies as you can but once you die, the game is over.</p>
+            </a>
+          </li>
+          <li class="ui-li ui-li-static ui-btn-up-c">
+            <a href="" id="resume_game_button">
+              <h3 class="ui-li-heading">Resume Game</h3>
+              <p class="ui-li-desc">85 Health / 5 Battles won, last played at 5:00 PM 12th May 2013.</p>
+            </a>
+          </li>
+          <li class="ui-li ui-li-static ui-btn-up-c ui-last-child">
+            <a href="#high_scores">
+              <h3 class="ui-li-heading">High Scores</h3>
+              <p class="ui-li-desc">How good are you really? Only the top 10 scores will be shown!</p>
+            </a>
+          </li>
+          <li class="ui-li ui-li-static ui-btn-up-c ui-last-child">
+            <a href="#achivements">
+              <h3 class="ui-li-heading">Achivements</h3>
+              <p class="ui-li-desc">Everybody likes to win. See what achivements you have unlocked!</p>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div data-role="footer" data-position="fixed">
+        <h2>Footer Content</h2>
       </div>
     </div>
-    <!-- /page one -->
-    <!-- Start of page one.five: #context -->
-    <div data-role="page" id="context">
-      <div id="context_page" class="wrapper">
-        <img src="img/level_ladder_background.jpg" id="context_background"/>
-        <div class="banner">
-          <div class="health">
-              <img src="img/health.png" alt=""/>
-          </div>
-          <div class="money">
-              <img src="img/gold.png" alt=""/>
-          </div>
-        </div>
-        <div class="level">Level 00</div>
-        <div id="enemies_context"></div>
-        <div id="enemies_details"></div>
-        <div class="story-container">
-          Hail the king!
-          <br>
-          <br>
-          As in the past,
-          the Worderlands shall bow to you and accept your right to rule,
-          as long as you continue to prove yourself worthy.
-          <br>
-          <br>
-          Play the game of words against all who challenge you. Defend your throne... if you can...
-        </div>
-        <a href="#home" data-role="button" data-inline="true" data-theme="a" class="left-btn">Back</a>
-        <div class="center-button">
-            <div>Defeat all <br>to clear <br>the level</div>
-        </div>
-        <a href="#level_ladder" data-role="button" data-inline="true" data-theme="b" data-transition="flip"
-           class="right-btn">Start</a>
-      </div>
-    </div>
-    <!-- /page one.five -->
-    <!-- Start of second page: #level_ladder -->
-    <div data-role="page" id="level_ladder">
-      <div id="second_page" class="wrapper">
-        <img src="img/level_ladder_background.jpg" id="level_ladder_background"/>
-        <div class="banner">
-          <div class="health">
-            <img src="img/health.png" alt=""/>
-          </div>
-          <div class="money">
-            <img src="img/gold.png" alt=""/>
-          </div>
-        </div>
-        <div class="level">Level 00</div>
-        <div class="enemies-container">
-          <div class="enemies-wrapper"></div>
-        </div>
-        <a href="#" id="restart" onclick='level_start(current_level,true);'><img src="img/restart.png"/></a>
-        <div id="victory_count"></div>
-        <div id="progress_bar">
-          <div id="progress"></div>
-        </div>
-        <a href="#context" data-role="button" data-inline="true" data-theme="a" class="left-btn">Back</a>
-        <div class="center-button">
-          <div>Swipe the <br>challengers <br>to browse</div>
-        </div>
-        <a href="#inventory" data-role="button" data-inline="true" data-theme="b" data-transition="flip"
-             class="right-btn">Prepare</a>
-      </div>
-    </div>
-    <!-- /page two -->
-    <!-- Start of third page: #inventory -->
+    <!-- /home -->
+    <!-- Start of #inventory -->
     <div data-role="page" id="inventory">
-      <div id="third_page" class="wrapper">
-        <img src="img/level_ladder_background.jpg" id="inventory_background"/>
-        <div class="banner">
-          <div class="health">
-            <img src="img/health.png" alt=""/>
+      <div data-role="header">
+        <a href="#" data-role="button" data-mini="true"><span id="health"></span> Health</a>
+        <h1>Fight #<span id="fight_number"></span></h1>
+        <a href="#" data-role="button" data-mini="true"><span id="gold"></span> Gold</a>
+      </div>
+      <div data-role="content">
+        <div class="ui-grid-a">
+          <div class="ui-block-a" class="enemy">
+            <h2 id="enemy_name"></h2>
+            <img src="img/characters/knight.png" />
+            <p id="enemy_description"></p>
+            <p>Health: <span id="enemy_health"></span></p>
+            <p>Health Regen: <span id="enemy_health_regen"></span></p>
+            <p>Attack: <span id="enemy_attack"></span></p>
+            <p>Attack Reference: <span id="enemy_attack_reference"></span></p>
+            <p>Attack Delta: <span id="enemy_attack_delta"></span></p>
+            <p>Attack Probability: <span id="enemy_attack_probability"></span></p>
+            <p>Defense: <span id="enemy_defense"></span></p>
+            <p>Defense Reference: <span id="enemy_defense_reference"></span></p>
+            <p>Value: <span id="enemy_value"></span> Gold</p>
           </div>
-          <div class="money">
-            <img src="img/gold.png"/>
+          <div class="ui-block-b">
+            <div class="current-spend">
+              Total Cost: 0
+            </div>
+            <div class="slots ui-grid-b">
+              <div class="ui-block-a">
+                <a href="#" data-role="button" data-mini="true" class="slot" nature="weapon"></a>
+              </div>
+              <div class="ui-block-b">
+                <a href="#" data-role="button" data-mini="true" class="slot" nature="shield"></a>
+              </div>
+              <div class="ui-block-c">
+                <a href="#" data-role="button" data-mini="true" class="slot" nature="spell"></a>
+              </div>
+              <div class="ui-block-a">
+                <a href="#" data-role="button" data-mini="true" class="slot" nature="armor"></a>
+              </div>
+              <div class="ui-block-b">
+                <a href="#" data-role="button" data-mini="true" class="slot" nature="helm"></a>
+              </div>
+              <div class="ui-block-c">
+                <a href="#" data-role="button" data-mini="true" class="slot" nature="potion"></a>
+              </div>
+            </div>
+            <div style="clear:both"></div>
+            <fieldset data-role="controlgroup" data-type="horizontal">
+              <input type="radio" name="item-filter" id="item-filter-1" value="weapon" checked="checked" />
+              <label for="item-filter-1">Weapon</label>
+              <input type="radio" name="item-filter" id="item-filter-2" value="shield" />
+              <label for="item-filter-2">Shield</label>
+              <input type="radio" name="item-filter" id="item-filter-3" value="spell" />
+              <label for="item-filter-3">Spell</label>
+              <input type="radio" name="item-filter" id="item-filter-4" value="armor" />
+              <label for="item-filter-4">Armor</label>
+              <input type="radio" name="item-filter" id="item-filter-5" value="helm" />
+              <label for="item-filter-5">Helm</label>
+              <input type="radio" name="item-filter" id="item-filter-6" value="potion" />
+              <label for="item-filter-6">Potion</label>
+            </fieldset>
+            <div class="swiper-container">
+              <div class="swiper-wrapper"></div>
+            </div>
+            <div style="clear:both"></div>
+            <a href="#" id="buy_coins">Buy Gold</a>
           </div>
         </div>
-        <div class="slots">
-          <img src="img/equips.png" id="equipment"/>
-          <div class="slot" id="slot1"></div>
-          <div class="slot" id="slot2"></div>
-          <div class="slot" id="slot3"></div>
-          <div class="slot" id="slot4"></div>
-          <div class="slot" id="slot5"></div>
-          <div class="slot" id="slot6"></div>
-        </div>
-        <div class="swiper-container">
-          <div class="swiper-wrapper"></div>
-        </div>
-        <div class="current-spend">
-          Current Spend: 0
-        </div>
-        <a href="#" id="equip"><img src="img/equip.png" alt=""/></a>
-        <a href="#" id="buy_coins"><img src="img/buy_coins.png" alt=""/></a>
-        <a href="#level_ladder" data-role="button" data-inline="true" data-theme="a" data-transition="flip" class="left-btn">Back</a>
-        <div class="center-button">
-          <div>Swipe the <br>items <br>to browse</div>
-        </div>
-        <a href="#fight" data-role="button" data-inline="true" data-theme="b" data-transition="flip" class="right-btn">Fight</a>
+        <a href="#" data-role="button" data-inline="true" class="right-btn fight_button">Fight</a>
       </div>
     </div>
-    <!-- /page three -->
-    <!-- Start of fourth page: #fight -->
+    <!-- /inventory -->
+    <!-- Start of #fight -->
     <div data-role="page" id="fight">
-      <div id="fourth_page" class="wrapper">
-        <!-- <img src="img/main_screen.jpg" id="fight_background" style="height:100%; width:26em" /> -->
-        <div class="hud">
-          <div id="hud-left">
-            Player <br>
-            <div id="myhealth">
-              <img src="img/health.png"/><span id="health_value"></span>
-            </div>
-            <div id="attack">
-              <img src="img/attack.png"/><span id="attack_value"></span>
-            </div>
-          </div>
-          <div id="hud-right">
-            Jester <br>
-            <div id="damage">
-              <span id="damage_value"></span><img src="img/damage.png"/>
-            </div>
-            <div id="enemy_fighting">
-              <span id="enemy_health"></span><img src="img/enemy.png"/>
-            </div>
-          </div>
+      <div data-role="panel" id="playerPanel" data-position="left" data-display="overlay">
+        <h2>Equiped Items</h2>
+        <div id="items"></div>
+      </div>
+      <div data-role="panel" id="enemyPanel" data-position="right" data-display="overlay">
+        <h2 id="enemy_name"></h2>
+        <img src="img/characters/knight.png" />
+        <p id="enemy_description"></p>
+        <p>Health: <span id="enemy_health"></span></p>
+        <p>Health Regen: <span id="enemy_health_regen"></span></p>
+        <p>Attack: <span id="enemy_attack"></span></p>
+        <p>Attack Reference: <span id="enemy_attack_reference"></span></p>
+        <p>Attack Delta: <span id="enemy_attack_delta"></span></p>
+        <p>Attack Probability: <span id="enemy_attack_probability"></span></p>
+        <p>Defense: <span id="enemy_defense"></span></p>
+        <p>Defense Reference: <span id="enemy_defense_reference"></span></p>
+        <p>Value: <span id="enemy_value"></span> Gold</p>
+      </div>
+      <div data-role="content">
+        <div class="player">
+          <a href="#playerPanel">
+            <p>
+              Player
+              <br>Health: <span id="health_value"></span>
+              <br>Current Attack: <span id="attack_value"></span>
+            </p>
+          </a>
         </div>
+        <div class="enemy">
+          <a href="#enemyPanel">
+            <p>
+              <span id="enemy_name"></span>
+              <br>Health: <span id="enemy_health"></span>
+              <br>Base Attack: <span id="damage_value"></span>
+            </p>
+          </a>
+        </div>
+        <div class="clear_fix"></div>
         <div id="board"></div>
+        <div class="clear_fix"></div>
         <div id="rack"></div>
+        <div class="clear_fix"></div>
         <div id="fight_buttons">
-          <a href="#" data-role="button" data-inline="true" data-theme="b" id="play">Play</a>
+          <a href="#" data-role="button" data-inline="true" data-theme="a" id="play">Play</a>
           <a href="#" data-role="button" data-inline="true" data-theme="a" id="pass">Pass</a>
           <a href="#" data-role="button" data-inline="true" data-theme="a" id="reset">Reset</a>
           <a href="#" data-role="button" data-inline="true" data-theme="a" id="menu">Menu</a>
         </div>
       </div>
     </div>
-    <!-- /page four -->
+    <!-- /fight -->
+    <!-- Start of #high_scores -->
+    <div data-role="page" id="high_scores">
+      <div data-role="header">
+        <h1>High Scores</h1>
+      </div>
+      <div data-role="footer" data-position="fixed">
+        <h2>Footer Content</h2>
+      </div>
+    </div>
+    <!-- /high_scores -->
+    <!-- Start of #achivements -->
+    <div data-role="page" id="achivements">
+      <div data-role="header">
+        <a href="#" data-role="button" data-mini="true">100 Health</a>
+        <h1>Achivements</h1>
+        <a href="#" data-role="button" data-mini="true">10000 Gold</a>
+      </div>
+      <div data-role="footer" data-position="fixed">
+        <h2>Footer Content</h2>
+      </div>
+    </div>
+    <!-- /achivements -->
 
     <!-- <script type="text/javascript" src="phonegap.js"></script> -->
     <script type="text/javascript" src="js/vendor/jquery-1.9.1.min.js"></script>

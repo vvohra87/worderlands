@@ -1,525 +1,67 @@
-/*
- * HTML5 Boilerplate
- *
- * What follows is the result of much research on cross-browser styling.
- * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
- * Kroc Camen, and the H5BP dev community and team.
- */
-
-/* ==========================================================================
-   Base styles: opinionated defaults
-   ========================================================================== */
-
-html,
-button,
-input,
-select,
-textarea {
-    color: #222;
+.clear_fix{
+  clear:both;
+  height:1em;
 }
 
-body {
-    font-size: 1em;
-    position: relative;
-    overflow: hidden;
-    background: black;
+.active_slot{
+  border:2px solid red;
 }
-
-/* UI Adjustments
----------------------------------------------*/
-
-.ui-page {
-    background: white;
-}
-
-.ui-btn.right-btn {
-    padding-right: 3em;
-    position: absolute;
-    width: 8em;
-    right: -5em;
-    bottom: 3em;
-    z-index: 2;
-}
-
-.ui-btn.right-btn .ui-btn-inner {
-    padding-right: 3em;
-}
-
-.ui-btn.left-btn {
-    padding-left: 3em;
-    position: absolute;
-    width: 8em;
-    left: -5em;
-    bottom: 3em;
-    z-index: 2;
-}
-
-.ui-btn.left-btn .ui-btn-inner {
-    padding-left: 3em;
-}
-
-h2 {
-    text-shadow: none;
-}
-
-/*-------------------------------------------*/
-/* Wrapper and Background Styles
--------------------------------------------*/
-.wrapper {
-    height: 100%;
-    width: 100%;
-    z-index: 0;
-    overflow: hidden;
-    position: absolute;
-}
-
-#home_background, #context_background, #level_ladder_background, #inventory_background{
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 1;
-    width: 100%;
-    height: 100%;
-}
-#fight_background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 1;
-    width: 316px;
-    height: 478px;
-}
-
-/* HUD Banner
-------------------------------------------------*/
-.banner {
-    position: absolute;
-    top: 1em;
-    width: 100%;
-    height: 3em;
-    background: darkred;
-    opacity: 1;
-    z-index: 2;
-    color: white;
-}
-
-.hud {
-    position: absolute;
-    top: 1em;
-    width: 100%;
-    height: 3em;
-    z-index: 2;
-    text-shadow: none;
-    font-weight: bold;
-}
-
-#hud-left {
-    position: absolute;
-    left: 1.3em;
-    text-align: left;
-    padding: 0.1em 0.5em;
-    background: darkred;
-    border-radius: 2px;
-    color:white;
-    width:7.5em;
-}
-
-#hud-left div {
-    display: inline-block;
-}
-
-#hud-right {
-    position: absolute;
-    right: 1.2em;
-    text-align: right;
-    padding: 0.1em 0.5em;
-    background: #ffae41;
-    border-radius: 2px;
-    width:7.5em;
-}
-
-#hud-right div {
-    display: inline-block;
-}
-
-.hud img {
-    width: 2em;
-    float: relative;
-    z-index: 2;
-    vertical-align: middle;
-}
-
-.health {
-    position: absolute;
-    left: 1em;
-    z-index: 2;
-    font-weight: bold;
-}
-
-.money {
-    position: absolute;
-    right: 1em;
-    z-index: 2;
-    font-weight: bold;
-}
-
-.health img, .money img {
-    width: 3em;
-    vertical-align: middle;
-}
-
-/*----------------------------------------------*/
-/* First Page
-------------------------------------------------*/
-
-.faded {
-    opacity: 0.5;
-}
-
-#splashes {
-    position: relative;
-    width: 15em;
-    margin: 5em auto 0;
-    z-index: 2;
-    text-align: center;
-}
-
-.logo {
-    display: none;
-}
-
-.logo img {
-    width: 10em;
-    height: 10em;
-}
-
-.main {
-    position: absolute;
-    width: 14.5em;
-    top: 2em;
-    right: 2em;
-    z-index: 2;
-    text-align: center;
-    display: none;
-}
-
-.main img {
-    position: absolute;
-}
-
-#home .buttons {
-    position: absolute;
-    top: 10em;
-    right: 6em;
-    z-index: 2;
-    display: none;
-}
-
-#home .buttons a {
-    position: absolute;
-}
-
-/*------------------------------------------*/
-/* Context Page
-----------------------------------------------*/
-
-.story-container {
-    position: absolute;
-    width: 14em;
-    height: 15em;
-    bottom: 7em;
-    left: 6em;
-    overflow: hidden;
-    z-index: 2;
-    font-size: 0.9em;
-    line-height: 1.0em;
-}
-
-#enemies_context {
-    position: absolute;
-    right: 2em;
-    top: 6em;
-    z-index: 2;
-}
-
-#enemies_details {
-    position: absolute;
-    left: 2em;
-    top: 6em;
-    z-index: 2;
-}
-
-#enemies_context img {
-    width: 6em;
-}
-
-/*------------------------------------------*/
-/* Level Ladder Page
-----------------------------------------------*/
-
-.level {
-    position: absolute;
-    -webkit-transform: rotate(270deg);
-    -moz-transform: rotate(270deg);
-    -o-transform: rotate(270deg);
-    z-index: 2;
-    font-size: 3em;
-    top: 5em;
-    left: -1em;
-    border-bottom: 2px solid darkred;
-}
-
-.enemies-slide td {
-    width: 8em;
-}
-
-#restart {
-    position: absolute;
-    z-index: 2;
-    top: 4.5em;
-    right: 1em;
-}
-
-#victory_count {
-    position: absolute;
-    z-index: 2;
-    top: 6em;
-    right: 7em;
-}
-
-#progress_bar {
-    position: absolute;
-    z-index: 2;
-    top: 7.5em;
-    right: 7em;
-    width: 12em;
-    height: 0.5em;
-    background: #ffae41;
-    border-radius: 0.2em;
-}
-
-#progress {
-    position: absolute;
-    left: 0em;
-    top: 0em;
-    width: 0;
-    height: 0.5em;
-    background: darkred;
-    border-radius: 0.2em;
-}
-
-.phrase {
-    font-size: 0.9em;
-    line-height: 1.0em;
-    padding-left: 1em;
-}
-
-.enemy_name {
-    font-weight: bold;
-    font-size: 0.9em;
-    line-height: 1.0em;
-}
-
-img.character {
-    width: 8em;
-    float: left;
-    margin-top: -1em;
-}
-
-.completed {
-    background: url("../img/dead.png") no-repeat;
-    text-shadow: none;
-    color: black;
-}
-
-.center-button {
-    position: absolute;
-    left: 50%;
-    bottom: 3.25em;
-    z-index: 2;
-}
-
-.center-button div {
-    position: relative;
-    left: -50%;
-    text-align: center;
-    font-weight: bold;
-    line-height: 1.1em;
-}
-
-/*------------------------------------------*/
-/* Third Page
-----------------------------------------------*/
-.swiper-container{
-    margin-top:2em;
-}
-
-#equipment {
-    position: absolute;
-    top: 5em;
-    left: 2em;
-    z-index: 2;
-    /*width: 80%;*/
-}
-
-.current-spend {
-    position: absolute;
-    margin-top: 2em;
-    top:22em;
-    left:2em;
-    z-index: 2;
-    font-weight: bold;
-}
-
-.swiper-slide img, .slot img {
-    width: 5em;
-    margin-right: 0.3em;
-}
-
-.swiper-slide table, .slot table {
-    width: 100%;
-    font-size: 0.9em;
-    line-height: 1.1em;
-}
-
-.swiper-slide td, .slot td {
-    vertical-align: middle;
-}
-
-.swiper-slide p, .slot p {
-    margin-top: 0.4em;
-    font-size: 0.75em;
-}
-
-#equip {
-    position: absolute;
-    left: 2em;
-    bottom: 7.5em;
-    z-index: 3;
-    height: 2.5em;
-}
-
-#buy_coins {
-    position: absolute;
-    left: 7em;
-    bottom: 7.5em;
-    z-index: 3;
-    height: 2.5em;
-}
-
-.slot {
-    position: absolute;
-    width: 4.9em;
-    height: 5em;
-    z-index: 4;
-}
-
-#slot1 {
-    top: 5.1em;
-    left: 2.1em;
-}
-
-#slot2 {
-    top: 5.1em;
-    left: 7.5em;
-}
-
-#slot3 {
-    top: 5.1em;
-    left: 13em;
-}
-
-#slot4 {
-    top: 10.6em;
-    left: 2.1em;
-}
-
-#slot5 {
-    top: 10.6em;
-    left: 7.5em;
-}
-
-#slot6 {
-    top: 10.6em;
-    left: 13em;
-}
-
-/*------------------------------------------*/
-/* Fight Page
-----------------------------------------------*/
 
 #board {
-    position: absolute;
-    top: 5em;
-    left: 1.3em;
-    z-index: 2;
-    width: 24em;
+  width:24em;
 }
 
 .square {
-    float: left;
-    margin: 0;
-    padding: 0;
-    width: 2.44em;
-    height: 2.46em;
-    z-index: 2;
-    background-size: 100%;
-    background-repeat: no-repeat;
-    cursor: pointer;
-    text-align: center;
-    font-size:1em;
-    line-height:2.45em;
-    font-weight: bold;
-    color:black;
-    border: 1px solid black;
+  float: left;
+  margin: 0;
+  padding: 0;
+  width: 2.44em;
+  height: 2.46em;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  text-align: center;
+  font-size:1em;
+  line-height:2.45em;
+  font-weight: bold;
+  color:black;
+  border: 1px solid black;
 }
 
 .tile {
-    position: relative;
-    display: inline-block;
-    margin: 0;
-    padding: 0;
-    width: 2.3em;
-    height: 2.3em;
-    border: 0.1em solid sandybrown;
-    z-index: 2;
-    background-size: 100%;
-    background-repeat: no-repeat;
-    cursor: pointer;
+  position: relative;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  width: 2.3em;
+  height: 2.3em;
+  border: 0.5em solid black;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  cursor: pointer;
 }
 
 .empty.tile {
-    background: beige;
+  background: gray;
 }
 
 .placed.tile {
-    background: beige;
+  background: gray;
+}
+
+.player, .enemy {
+  float:left;
+  width:50%;
 }
 
 .racked.tile {
-    background: black;
+  background: black;
 }
 
 .picked.tile {
-    opacity: 1;
+  opacity: 1;
 }
 
 #rack {
-    position: absolute;
-    top: 30em;
-    left: 1.3em;
-    z-index: 2;
+  margin:0 auto;
 }
-
-#fight_buttons {
-    position: absolute;
-    top: 34em;
-    left: 1.3em;
-    z-index: 2;
-}
-
-#fight_buttons .ui-btn, #fight_buttons .ui-btn-inner {
-    padding: 0.1em 0.2em;
-    border-radius: 2px;
-}
-

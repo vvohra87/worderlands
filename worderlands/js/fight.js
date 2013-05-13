@@ -18,7 +18,7 @@ var wordlist     = [];
 var i, j;
 
 function game_setup() {
-  fight        = playerProgress[currentLevel].fights[currentFight]
+  fight        = playerProgress[currentFight]
   attack       = 0;
   damage       = 5;
   enemy_health = fight.villan.max_health;
@@ -48,10 +48,12 @@ function game_setup() {
   }
   for (i = 1; i < grid_size; i++) // Set up an empty rack
     $('#rack').append('<div class="empty tile"></div>');
-  $('#health_value').html(playerHealth);
-  $('#attack_value').html(attack);
-  $('#damage_value').html(damage);
-  $('#enemy_health').html(enemy_health);
+
+  $('#fight #health_value').html(playerHealth);
+  $('#fight #attack_value').html(attack);
+  $('#fight #damage_value').html(damage);
+  $('#fight #enemy_health').html(enemy_health);
+  $('#fight #enemy_name').html(fight.villan.name);
   bind_tiles();
   bind_buttons();
 }
@@ -123,9 +125,9 @@ function bind_buttons() {
       $('.active.square').swapClass('active', 'filled'); //finalize the board
       $('.tile.placed').swapClass('placed', 'empty'); //finalize the rack
       attack_the_enemy();
-      if (parseInt($('#enemy_health').html()) > 0) {
+      if (parseInt($('#fight #enemy_health').html()) > 0) {
         take_damage();
-        if (parseInt($('#health_value').html()) < 0) alert("You Lost");
+        if (parseInt($('#fight #health_value').html()) < 0) alert("You Lost");
       } else {
         alert("You won");
       }
@@ -175,12 +177,12 @@ function reset_rack() {
 }
 
 function attack_the_enemy() {
-  $('#enemy_health').html(parseInt($('#enemy_health').html()) - parseInt($('#attack_value').html()));
-  $('#attack_value').html(0);
+  $('#fight #enemy_health').html(parseInt($('#fight #enemy_health').html()) - parseInt($('#fight #attack_value').html()));
+  $('#fight #attack_value').html(0);
 }
 
 function take_damage() {
-  $('#health_value').html(parseInt($('#health_value').html()) - parseInt($('#damage_value').html()));
+  $('#fight #health_value').html(parseInt($('#fight #health_value').html()) - parseInt($('#fight #damage_value').html()));
 }
 
 function checkDictionary(theWord) {

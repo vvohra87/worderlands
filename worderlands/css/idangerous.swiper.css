@@ -4,7 +4,7 @@
  *
  * Vladimir Kharlampidi, The iDangero.us
  * http://www.idangero.us/
- * 
+ *
  * Copyright 2012, Vladimir Kharlampidi
  * The iDangero.us
  * http://www.idangero.us
@@ -70,9 +70,10 @@
 }
 
 .swiper-container {
-	position:absolute;
+	/*position:absolute;
     top:16em;
-    left:2em;
+    left:2em;*/
+  border: 1px solid black;
 	overflow:hidden;
 	-webkit-backface-visibility:hidden;
 	-moz-backface-visibility:hidden;
@@ -83,15 +84,15 @@
 	z-index:3;
 }
 
-
 .swiper-slide {
 	float: left;
+	padding:1em;
 }
 
 .swiper-container, .swiper-slide {
-	width: 15em;
-	height: 8em;
-    cursor: pointer;
+	width: 95%;
+	height: 6em;
+  cursor: pointer;
 }
 
 /* IE10 Windows Phone 8 Fixes */
